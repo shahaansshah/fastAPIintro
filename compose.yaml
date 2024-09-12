@@ -1,0 +1,14 @@
+
+services:
+  app:
+    build: .
+    volumes:
+      - .:/app
+    environment:
+      - APP_NAME=fastAPIintro
+      - BUILD=latest
+    env_file:
+      - .env
+    ports:
+      - "8088:80"
+    command: uvicorn main:app --host 0.0.0.0 --port 80 --reload
