@@ -7,8 +7,6 @@ services:
     environment:
       - APP_NAME=fastAPIintro
       - BUILD=latest
-    env_file:
-      - .env
     ports:
       - "8080" #"8088:80"
     command: uvicorn main:app --host 0.0.0.0 --port 8080 --reload # 'originally --port 80'
