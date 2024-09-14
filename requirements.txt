@@ -1,3 +1,3 @@
-fastapi[standard]
-pytest
-black
+fastapi[standard] == 0.114.0
+pytest == 8.3.2
+black == 24.8.0
