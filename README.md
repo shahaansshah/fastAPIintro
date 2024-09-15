@@ -1,8 +1,18 @@
 # FastAPIintro
-Small project - an introduction to web development. Currently using fastapi and intended to run with docker.
+A small introduction-to-web-development project. Currently creates a "Hello World" webpage with fastapi.
 
-### How to Run
-Clone repository, and in root directory, use docker run `docker compose up`.
+### Run Project
+This project is run using docker compose. To run:
+1) [Install docker compose](https://docs.docker.com/compose/install/)
+2) Clone this repository:
 
-### How to Test
-Run `python -m pytest` from the root directory.
+    ```
+    git clone https://github.com/shahaansshah/fastAPIintro
+    ```
+
+3) In your CLI, with the repository root directory active, run `docker compose up`
+4) In your web browser, open `http://localhost:80` (correct this)
+5) Once finished, run `docker compose down`
+
+### Test Project Modules
+Run `python -m pytest` from the root directory. (Correct this - see Issue #2)
