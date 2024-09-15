@@ -11,6 +11,7 @@ This project is run using docker compose. To run:
     ```
 
 3) In your CLI, with the repository root directory active, run `docker compose up`
+    - If changing/updating the repository, run `docker compose up --build`
 4) In your web browser, open `http://localhost:80` (correct this)
 5) Once finished, run `docker compose down`
 
