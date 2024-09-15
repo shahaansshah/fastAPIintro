@@ -1,2 +1,5 @@
+# generated when running `docker compose up`
+__pycache__
+
 # tests/__pycache__
 # tests/.pytest_cache
