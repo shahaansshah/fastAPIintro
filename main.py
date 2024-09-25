@@ -15,7 +15,7 @@ async def root():
 
 # Returns a random cat fact from a list of facts (default length of 10 facts)
 @app.get("/facts")
-async def root():
+async def get_cat_facts():
     # URL to send an HTTP get request to
     resp = requests.get("https://catfact.ninja/facts").json()
 
@@ -28,7 +28,7 @@ async def root():
 
 # Returns a cat breed from a list dictionaries featuring breeds and other information
 @app.get("/breeds")
-async def root():
+async def get_cat_breeds():
     # URL to send an HTTP get request to
     resp = requests.get("https://catfact.ninja/breeds").json()
 
