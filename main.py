@@ -17,23 +17,35 @@ async def root():
 @app.get("/facts")
 async def get_cat_facts():
     # URL to send an HTTP get request to
-    resp = requests.get("https://catfact.ninja/facts").json()
+    resp = requests.get("https://catfact.ninja/facts")
 
+    # I believe this allows 200-series codes & 300-series codes
+    try: resp.raise_for_status()
+    except HTTPError:
+        return {"error": resp.reason, "status_code": resp.status_code}
+    
     # response, after .json conversion, is a dictionary containing data of interest under key "data", and facts in their own dictionary under key "fact"
+    resp = resp.json()
     facts = resp["data"]
     fact = random.choice(facts)["fact"]
 
-    return fact
+    return {"fact": fact}
 
 
 # Returns a cat breed from a list dictionaries featuring breeds and other information
 @app.get("/breeds")
 async def get_cat_breeds():
     # URL to send an HTTP get request to
-    resp = requests.get("https://catfact.ninja/breeds").json()
+    resp = requests.get("https://catfact.ninja/breeds")
 
+    # I believe this allows 200-series codes & 300-series codes
+    try: resp.raise_for_status()
+    except HTTPError:
+        return {"error": resp.reason, "status_code": resp.status_code}
+    
     # response, after .json conversion, is a dictionary containing data of interest under key "data", and breeds in their own dictionary under key "breed"
+    resp = resp.json()
     cat_info = resp["data"]
     breed = random.choice(cat_info)["breed"]
 
-    return breed
+    return {"breed": breed}
